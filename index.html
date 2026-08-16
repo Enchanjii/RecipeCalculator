@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Nutrition Engine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="app-container">
+        <!-- Input Section -->
+        <section class="input-card">
+            <div class="input-header">
+                <p class="eyebrow">Recipe Nutrition Calculator</p>
+                <h1>Enter ingredients clearly, one per line</h1>
+                <p class="card-description">
+                    Paste your ingredient list, then let the calculator pull nutrition totals for the whole recipe.
+                </p>
+            </div>
+
+            <div class="guide-panel" aria-label="How to use this calculator">
+                <div>
+                    <span class="guide-step">1</span>
+                    <p>Type or paste each ingredient on its own line.</p>
+                </div>
+                <div>
+                    <span class="guide-step">2</span>
+                    <p>Use specific names like <strong>chicken breast</strong> or <strong>rolled oats</strong>.</p>
+                </div>
+                <div>
+                    <span class="guide-step">3</span>
+                    <p>Click analyze to see the totals in the nutrition label.</p>
+                </div>
+            </div>
+
+            <div class="example-panel">
+                <p class="panel-label">Example ingredients</p>
+                <ul class="example-list">
+                    <li>oats</li>
+                    <li>milk</li>
+                    <li>banana</li>
+                    <li>chicken breast</li>
+                </ul>
+            </div>
+
+            <textarea id="recipe-input" rows="8" aria-label="Recipe ingredients input"
+                placeholder="e.g.&#10;oats&#10;chicken breast&#10;milk&#10;banana"></textarea>
+
+            <button id="analyze-btn" onclick="analyzeRecipe()">
+                <span id="btn-text">Analyze Recipe</span>
+            </button>
+        </section>
+
+        <!-- Nutrition Label Output Section -->
+        <section class="nutrition-card">
+            <div class="nutrition-label">
+                <h2 class="label-title">Nutrition Facts</h2>
+                <div class="divider thick"></div>
+
+                <div class="label-row header-row">
+                    <span class="bold">Amount Per Recipe</span>
+                </div>
+                <div class="divider medium"></div>
+
+                <div class="label-row main-metric">
+                    <span class="bold">Calories</span>
+                    <span id="total-calories" class="bold">0</span>
+                </div>
+                <div class="divider thick"></div>
+
+                <div class="label-row">
+                    <span><strong class="bold">Total Fat</strong></span>
+                    <span><span id="total-fat">0</span>g</span>
+                </div>
+                <div class="divider thin"></div>
+
+                <div class="label-row">
+                    <span><strong class="bold">Total Carbohydrate</strong></span>
+                    <span><span id="total-carbs">0</span>g</span>
+                </div>
+                <div class="divider thin"></div>
+
+                <div class="label-row">
+                    <span><strong class="bold">Protein</strong></span>
+                    <span><span id="total-protein">0</span>g</span>
+                </div>
+                <div class="divider thick"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
